@@ -35,7 +35,7 @@ class UserController extends Controller
     }
 
     public function show($id){
-        $show_producto = User::find($id);
+        $show_producto = User::find($id);;
 
         return $show_producto;
     }
