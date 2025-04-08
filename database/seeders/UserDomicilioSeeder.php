@@ -16,7 +16,7 @@ class UserDomicilioSeeder extends Seeder
      */
     public function run()
     {
-        User::factory()->count(100)->create();
-        Domicilio::factory()->count(100)->create();
+        User::factory()->count(10)->create();
+        Domicilio::factory()->count(10)->create();
     }
 }

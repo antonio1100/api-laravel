@@ -23,5 +23,6 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         $this->call(UserDomicilioSeeder::class);
+        $this->call(CategoriasTableSeeder::class);
     }
 }
