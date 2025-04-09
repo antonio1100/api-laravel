@@ -7,6 +7,28 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
+# Mi Proyecto Laravel
+
+Este es un proyecto de administración de tareas utilizando Laravel 9. Incluye autenticación mediante login y el uso del paquete jwt-auth, se incluyen metodos para la creacion de un CRUD completo para las tareas, tambien se incluyen metodos para eliminar, editar y mostrar los usuarios que se encuentran en la base de datos, se incluye tambien el cierre de sesion del usuario.
+
+dentro de las migraciones se incluye un factory el cual genera 10 usuarios para cargarlos en la base de datos
+, la contraseña es la misma para todos los usuarios del 1 al 6.
+
+## Instalación
+
+1. Clona el repositorio:
+   ```bash
+   git clone git@github.com:antonio1100/api-laravel.git   o  git clone https://github.com/antonio1100/api-laravel.git
+
+2. Instala las dependencias:
+     composer install
+     php artisan key:generate
+     php artisan jwt:secret
+3. Configura la base de datos en archivo .env
+4. Ejecuta las migraciones y seeders:
+     php artisan migrate
+     php artisan db:seed
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
