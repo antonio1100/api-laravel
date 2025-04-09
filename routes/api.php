@@ -33,8 +33,8 @@ Route::controller(ActividadesController::class)->group(function () {
     Route::get('/tareas','index')->name('tareas.index');
     Route::post('/tarea','store')->name('tarea.store');
     Route::get('/tarea/{id}','show')->name('tarea.show');
-    // Route::put('/tarea/{id}','update')->name('tarea.update');
-    Route::delete('/tarea/{id}','delete')->name('tarea.delete');
+    Route::put('/tarea/{id}','update')->name('tarea.update');
+    Route::delete('/tarea/{id}','destroy')->name('tarea.destroy');
 });
 
 
