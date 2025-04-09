@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ActividadesController;
 use App\Http\Controllers\AuthController;
 
 /*
@@ -17,10 +18,23 @@ use App\Http\Controllers\AuthController;
 */
 
 
-Route::post('/login', [AuthController::class, 'login']);
+Route::prefix('auth')->group(function () {
+    Route::post('/login', [AuthController::class, 'login']); // público
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+    // protegidas por middleware JWT
+    Route::get('/me', [AuthController::class, 'me']);
+    Route::post('/logout', [AuthController::class, 'logout']);
+    Route::post('/refresh', [AuthController::class, 'refresh']);
+});
+
+
+Route::controller(ActividadesController::class)->group(function () {
+
+    Route::get('/tareas','index')->name('tareas.index');
+    Route::post('/tarea','store')->name('tarea.store');
+    Route::get('/tarea/{id}','show')->name('tarea.show');
+    // Route::put('/tarea/{id}','update')->name('tarea.update');
+    Route::delete('/tarea/{id}','delete')->name('tarea.delete');
 });
 
 

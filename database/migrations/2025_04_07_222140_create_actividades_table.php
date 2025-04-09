@@ -15,16 +15,12 @@ return new class extends Migration
     {
         Schema::create('actividades', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('categoria_id');
-            $table->foreign("categoria_id")
-            ->references("id")
-            ->on("categorias")
-            ->onDelete("cascade")
-            ->onUpdate("cascade");
+            $table->string('categoria');
             $table->string('titulo');
+            $table->string('estado');
             $table->string('descripcion');
             $table->date('fecha_de_vencimiento');
-            $table->boolean('prioridad');           
+            $table->string('prioridad');           
             $table->timestamps();
 
            

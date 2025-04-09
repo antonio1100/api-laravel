@@ -4,6 +4,7 @@ namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Hash;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\User>
@@ -22,7 +23,7 @@ class UserFactory extends Factory
             'email' => fake()->unique()->safeEmail(),
             'fecha_nacimiento' => fake()->date(),
             'email_verified_at' => now(),
-            'password' => fake()->password(5, 10), // password
+            'password' => Hash::make('123456'), // contraseña segura(123456)
             'role' => fake()->randomElement(['admin', 'capturista']),
             'remember_token' => Str::random(10),
         ];
